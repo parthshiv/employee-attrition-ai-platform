@@ -6,8 +6,6 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 
 CSV_PATH = BASE_DIR / "data" / "raw" /"employees.csv"
 
-
-
 df = pd.read_csv(CSV_PATH)
 
 # print(df.head())
