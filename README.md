@@ -117,6 +117,7 @@ Key priorities:
 
 ## Project Structure
 
+```note
 employee-attrition-ai-platform/
 │
 ├── data/
@@ -129,7 +130,6 @@ employee-attrition-ai-platform/
 ├── requirements.txt
 └── README.md
 ```
-
 ---
 
 ## Learning Goals
@@ -145,3 +145,4 @@ employee-attrition-ai-platform/
 ## Disclaimer
 
 This project uses sample or synthetic data for learning purposes and does not represent real employee records.
+
