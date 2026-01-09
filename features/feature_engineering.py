@@ -46,5 +46,12 @@ def engineer_features(df):
     df['salary_ratio'] = df['salary'] / df['salary'].mean() #employee_salary / company_average_salary
     # df['salary'].mean(): Computes average salary of the entire dataset/whole comuln 'salary' of data
 
-
+    # -----------------------------
+    # Feature 3: Low Satisfaction Risk Flag
+    # -----------------------------
+    # 1 => unhappy employee (risk)
+    # 0 => satisfied employee
+    
+    df['low_satisfaction'] = (df['job_satisfaction'] <=2).astype(int) #astype(int) converts True=1, False=0
+    
     return df
