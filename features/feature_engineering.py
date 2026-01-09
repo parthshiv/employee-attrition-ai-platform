@@ -32,5 +32,19 @@ def engineer_features(df):
         columns=["tenure_bucket"],
         drop_first=True #To avoid dummy variable trap, reduces redundancy,improves numerical stability
     )
+    
+    # -----------------------------
+    # FEATURE 2: SALARY RATIO
+    # -----------------------------
+    # formula: employee_salary / company_average_salary     
+    # | salary_ratio | Meaning       |
+    # | ------------ | ------------- |
+    # | < 1.0        | Underpaid     |
+    # | = 1.0        | Average       |
+    # | > 1.0        | Above average |
+    
+    df['salary_ratio'] = df['salary'] / df['salary'].mean() #employee_salary / company_average_salary
+    # df['salary'].mean(): Computes average salary of the entire dataset/whole comuln 'salary' of data
+
 
     return df
