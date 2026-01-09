@@ -10,6 +10,13 @@ def engineer_features(df):
     - prediction
     - monitoring
     - explanations
+    
+    | Feature          | Type                  | Purpose        |
+    | ---------------- | --------------------- | -------------- |
+    | tenure_bucket    | categorical → numeric | career stage   |
+    | salary_ratio     | numeric               | relative pay   |
+    | low_satisfaction | binary                | emotional risk |
+
     """
 
     # Always work on a copy to avoid modifying original data
@@ -53,5 +60,12 @@ def engineer_features(df):
     # 0 => satisfied employee
     
     df['low_satisfaction'] = (df['job_satisfaction'] <=2).astype(int) #astype(int) converts True=1, False=0
+    
+    # -----------------------------
+    # Feature 4: Experience vs Salary Interaction
+    # -----------------------------
+    # Higher value => experienced but underpaid (risk signal)
+    
+    df["exp_salary_ratio"] = df["years_at_company"] / (df["salary"] + 1)
     
     return df
